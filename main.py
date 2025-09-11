@@ -18,5 +18,7 @@ df['num_character'] = df['Text'].apply(len)
 
 
 df['num_word'] = df['Text'].apply(lambda x:nltk.word_tokenize(x))
+df['num_sentsence'] = df['Text'].apply(lambda x:len(nltk.sent_tokenize(x)))
+
 print(df.head())
 print(df.info())
