@@ -4,7 +4,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 
 df = pd.read_csv('spam.csv', encoding='latin1')
-print(df.head())
 df = df[['v1','v2']]
-df.rename({"v1":"status","v2":"Text"})
-print(df.info())
+df.rename(columns={"v1":"status","v2":"Text"},inplace=True)
+
+
+le = LabelEncoder()
+df['status'] = le.fit_transform(df['status'])
+print(df['status'].value_counts())
