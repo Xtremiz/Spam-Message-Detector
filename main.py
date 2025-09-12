@@ -22,5 +22,5 @@ df['num_character'] = df['Text'].apply(len)
 df['num_word'] = df['Text'].apply(lambda x:len(nltk.word_tokenize(x)))
 df['num_sentence'] = df['Text'].apply(lambda x:len(nltk.sent_tokenize(x)))
 
-
-
+df['Transform Text'] = df['Text'].apply(e.transform_text)
+print(df.info())
