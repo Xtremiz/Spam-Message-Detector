@@ -21,4 +21,3 @@ def transform_text(text):
         y.append(ps.stem(i))
     return y
 
-print(transform_text("hi my name is fozan ahmed, dancing in the floor !"))
